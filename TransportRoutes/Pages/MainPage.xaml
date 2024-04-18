@@ -1,0 +1,76 @@
+﻿<Page x:Class="TransportRoutes.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TransportRoutes.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+
+    <Grid Background="White">
+
+        <StackPanel Margin="0,0,416,0">
+            <Button x:Name="ClearButton" Content="Очистить" Click="ClearButton_Click"/>
+            <Label Content="Расходы:" FontSize="24"/>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Ширина:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox x:Name="WidthInput" Width="50" Margin="0,0,20,0"/>
+                <TextBlock Text="Высота:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox x:Name="HeightCostsInput" Width="50"/>
+                <Button x:Name="CreateCostsButton" Content="Создать" Margin="10,0,0,0" Click="CreateCostsButton_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBox x:Name="WidthCostsTextBox" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="x" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="HeightCostsTextBox" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="=" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="ValueCostsTextBox" TextWrapping="Wrap"
+                         VerticalAlignment="Top" Width="120" Height="30"/>
+                <Button x:Name="EnterCostsButton" Content="Записать" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Click="EnterCostsButton_Click"/>
+            </StackPanel>
+
+            <Label Content=" Поставка:" FontSize="24"/>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Количество:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock x:Name="CountSupply" Width="50" Margin="0,0,20,0"/>
+                
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBox x:Name="CountSupplyTextBox" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="=" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="ValueSupplyTextBox" TextWrapping="Wrap"
+                         VerticalAlignment="Top" Width="120" Height="30"/>
+                <Button x:Name="EnterSupplyButton" Content="Записать" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Click="EnterSupplyButton_Click"/>
+            </StackPanel>
+
+            <Label Content=" Требуется:" FontSize="24"/>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Количество:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock x:Name="CountDemand" Width="50" Margin="0,0,20,0"/>
+               
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBox x:Name="CountDemandTextBox" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="=" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="ValueDemandTextBox" TextWrapping="Wrap"
+                         VerticalAlignment="Top" Width="120" Height="30"/>
+                <Button x:Name="EnterDemandButton" Content="Записать" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Click="EnterDemandButton_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="WestCalculate" Width="180" Height="30" Content="Расчитать северо-заподным" Margin="10" Click="WestCalculate_Click" Visibility="Hidden" />
+                <Button x:Name="MinCalculate" Width="180" Height="30" Content="Расчитать минимальным" Margin="10" Click="MinCalculate_Click"/>
+            </StackPanel>
+            
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right">
+            <Button x:Name="GetDataButton" HorizontalAlignment="Center" Content="Получить данные из файла" Height="30" Width="250" Click="GetDataButton_Click" Margin="10"/>
+            <TextBlock x:Name="TotalCostTextBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="24" Margin="10"/>
+            <Button x:Name="SaveDataButton" Content="Записать данные в файл" HorizontalAlignment="Center" VerticalAlignment="Top" Width="170" Height="30" Margin="10" Click="SaveDataButton_Click"/>
+            <TextBlock x:Name="DataOutput"  Height="292"/>
+        </StackPanel>
+        
+
+    </Grid>
+</Page>
